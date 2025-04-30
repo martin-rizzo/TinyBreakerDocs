@@ -1,7 +1,10 @@
-site_name: TinyBreaker Documentation
-repo_name: TinyBreaker Doc?
+site_name: TinyBreaker Docs
+repo_name: TinyBreaker Docs
 repo_url: https://github.com/martin-rizzo/TinyBreakerDocs
 edit_uri: ''
-github_pages:
-  repo: https://github.com/martin-rizzo/TinyBreakerDocs
 
+nav:
+  - Home: index.md
+
+extra:
+  disclaimer: "This documentation is for informational purposes only and may be subject to changes."
