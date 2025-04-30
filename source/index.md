@@ -1,9 +1,11 @@
 # TinyBreaker
 
-![TinyBreaker](docs/images/tinybreaker_grid.jpg)
-
 [![CivitAI](https://img.shields.io/badge/CivitAI%3A-TinyBreaker-EEE?labelColor=1971C2&logo=c%2B%2B&logoColor=white)](https://civitai.com/models/1213728) |
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face%3A-TinyBreaker-EEE?labelColor=FFD21E&logo=huggingface&logoColor=000)](https://huggingface.co/martin-rizzo/TinyBreaker.prototype0)
+
+
+![TinyBreaker](docs/images/tinybreaker_grid.jpg)
+
 
 ---
 

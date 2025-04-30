@@ -2,12 +2,15 @@ site_name: TinyBreaker Docs
 repo_name: github-repo
 repo_url: https://github.com/martin-rizzo/TinyBreakerDocs
 edit_uri: ''
-
 docs_dir: source
 site_dir: docs
 
+theme:
+  name: readthedocs
+
 nav:
   - Home: index.md
+  - Model Files: model-files.md
 
 extra:
   disclaimer: "This documentation is for informational purposes only and may be subject to changes."
