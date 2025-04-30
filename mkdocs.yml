@@ -3,6 +3,9 @@ repo_name: TinyBreaker Docs
 repo_url: https://github.com/martin-rizzo/TinyBreakerDocs
 edit_uri: ''
 
+docs_dir: source
+site_dir: docs
+
 nav:
   - Home: index.md
 
