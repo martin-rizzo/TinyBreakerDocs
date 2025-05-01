@@ -1,0 +1,21 @@
+/* Reduce spacing below H1 and H2 headings */
+h1 {
+    margin-bottom: 1.0rem !important; 
+}
+h2 {
+    margin-top: 1.6rem !important;
+    margin-bottom: 0.4rem !important; 
+}
+
+/* Italic text will always be gray */
+em {
+    color: #999999;
+    font-style: italic;
+}
+
+/* Remove border from code elements */
+code {
+    border: none !important;
+}
+
+

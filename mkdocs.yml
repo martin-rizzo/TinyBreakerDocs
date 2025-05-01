@@ -1,3 +1,5 @@
+# Guide to all available configuration settings:
+# - https://www.mkdocs.org/user-guide/configuration/
 site_name: TinyBreaker Docs
 repo_name: github-repo
 repo_url: https://github.com/martin-rizzo/TinyBreakerDocs
@@ -11,6 +13,13 @@ theme:
 nav:
   - Home: index.md
   - Model Files: model-files.md
+  - ComfyUI Nodes:
+    - comfyui/empty-latent-image.md
+    - Build Custom Transcoder: comfyui/build-custom-transcoder.md
+
+extra_css:
+  - css/custom.css
 
 extra:
   disclaimer: "This documentation is for informational purposes only and may be subject to changes."
+

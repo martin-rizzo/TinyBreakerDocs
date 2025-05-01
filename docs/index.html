@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -42,7 +43,9 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-tinybreaker">What is TinyBreaker?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
     </li>
     </ul>
                 </li>
@@ -50,6 +53,13 @@
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="model-files/">Model Files</a>
                 </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ComfyUI Nodes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="comfyui/empty-latent-image/">Empty latent image</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="comfyui/build-custom-transcoder/">Build Custom Transcoder</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -77,21 +87,62 @@
                 <h1 id="tinybreaker">TinyBreaker</h1>
 <p><a href="https://civitai.com/models/1213728"><img alt="CivitAI" src="https://img.shields.io/badge/CivitAI%3A-TinyBreaker-EEE?labelColor=1971C2&amp;logo=c%2B%2B&amp;logoColor=white" /></a> |
 <a href="https://huggingface.co/martin-rizzo/TinyBreaker.prototype0"><img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face%3A-TinyBreaker-EEE?labelColor=FFD21E&amp;logo=huggingface&amp;logoColor=000" /></a></p>
-<p><img alt="TinyBreaker" src="docs/images/tinybreaker_grid.jpg" /></p>
+<p><img alt="TinyBreaker" src="images/tinybreaker_grid.jpg" /></p>
 <hr />
-<p><strong>ComfyUI-TinyBreaker</strong> is a collection of custom nodes specifically designed to generate images using the TinyBreaker model. It's actively developed with ongoing improvements. Although still in progress, these nodes are functional and allow you to explore the potential of the model.</p>
+<h2 id="what-is-tinybreaker">What is TinyBreaker?</h2>
+<p><strong>TinyBreaker</strong> is a generative image model that combines the <strong><a href="https://github.com/PixArt-alpha/PixArt-sigma">PixArt model</a></strong> for base image generation with the <strong><a href="https://civitai.com/models/84728/photon">Photon model</a></strong> for image refinement. This hybrid approach leverages the strengths of both models, enabling efficient operation on mid-range and low-end hardware due to their low parameter count. Additionally, by running them sequentially, you can offload models to system RAM, significantly reducing VRAM usage.</p>
+<p>In addition to all that, TinyBreaker also integrates <strong><a href="https://github.com/madebyollin/taesd">Tiny AutoEncoders</a></strong> for latent space conversion, further optimizing performance and efficiency.  </p>
+<p><span style="font-size: 0.8em; color: gray;"><strong>Note</strong>: While Photon is currently embedded in TinyBreaker, any SD1.5 model could be used as a refiner. SDXL models could also be used, but this would increase the parameter count, requiring more GPU resources.</span></p>
+<!--
+
+TinyBreaker represents the natural evolution of two earlier projects:  
+- **Photon Model**: A fine-tuning of SD1.5 designed to generate photorealistic and visually appealing images with minimal effort.  
+- **The Abominable Workflows**: A set of ComfyUI workflows that emulated TinyBreaker’s capabilities through complex, non-standard workflows.  
+
+---
+
+## What is TinyBreaker?  
+TinyBreaker's design leverages the PixArt model for creating a strong base image and uses either a Photon or SD1 model to refine these images. By combining their strengths, the model achieves high-quality results while minimizing computational demands.  
+
+---
+
+## What Makes TinyBreaker Unique?  
+### Efficient Parameter Use  
+TinyBreaker is notable for its low parameter count, featuring just 0.6 billion parameters in the base model. This efficiency means that high-quality image generation requires significantly fewer computational resources compared to heavier models.  
+
+### Quick Performance  
+TinyBreaker currently generates images of size 1536×1024 in approximately 10 to 15 seconds using an NVIDIA RTX 3080 GPU. Initially, the goal was always to achieve image generation in under 10 seconds, and the focus continues toward this target. Exploring new optimizations may allow meeting this objective while maintaining high quality.  
+
+### High Prompt Adherence  
+Thanks to the integration of the PixArt model, TinyBreaker achieves impressive adherence to prompts despite its minimal parameter count. This ensures that the generated images closely align with user instructions and expectations.  
+
+---
+
+## Limitations of TinyBreaker  
+### Text Generation Challenges  
+Currently, TinyBreaker faces significant challenges in producing legible text within images. Since its underlying PixArt model was not specifically trained on tasks involving detailed text generation, achieving high-quality lettering is problematic. Enhancing this capability may be difficult or nearly impossible without substantial retraining beyond simple fine-tuning.  
+
+---
+
+## Technical Advantages  
+### Hybrid Architecture  
+TinyBreaker's design combines the PixArt model for base image generation with the Photon model (or any SD1 model) for refinement. This hybrid approach balances quality and efficiency.  
+
+### Optimized Latent Space Handling  
+The use of Tiny Autoencoders for latent space conversion further enhances TinyBreaker's performance and efficiency. These autoencoders streamline the process of converting input data into meaningful images, ensuring quality while minimizing resource usage.  
+
+---
+
+## Future Directions  
+The focus is on enhancing speed without compromising image quality. Efforts are underway to make TinyBreaker more accessible, especially for users with mid-range or lower-end hardware. Thank you for your continued support as we strive to improve. Updates will be shared soon.  
+
+-->
 <hr />
-<h3 id="table-of-contents">Table of Contents</h3>
-<ol>
-<li><a href="model-files/">Model Files</a></li>
-<li><a href="node-installation/">Node Installation</a></li>
-<li><a href="#installation-via-comfyui-manager-recommended">Installation via ComfyUI Manager (Recommended)</a></li>
-<li><a href="#manual-installation">Manual Installation</a></li>
-<li><a href="workflow-example.md">Workflow Example</a></li>
-<li><a href="features/">Features</a></li>
-<li><a href="acknowledgments/">Acknowledgments</a></li>
-<li><a href="license/">License</a></li>
-</ol>
+<h2 id="documentation">Documentation</h2>
+<p><a href="documentation.md">View full documentation</a><br />
+<a href="models.md">Download models</a><br />
+<a href="usage.md">Usage guide</a>  </p>
+<hr />
               
             </div>
           </div><footer>
@@ -144,5 +195,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-04-30 18:35:20.062372+00:00
+Build Date UTC : 2025-05-01 21:26:17.604087+00:00
 -->
