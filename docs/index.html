@@ -43,10 +43,6 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-tinybreaker">What is TinyBreaker?</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -88,11 +84,16 @@
 <p><a href="https://civitai.com/models/1213728"><img alt="CivitAI" src="https://img.shields.io/badge/CivitAI%3A-TinyBreaker-EEE?labelColor=1971C2&amp;logo=c%2B%2B&amp;logoColor=white" /></a> |
 <a href="https://huggingface.co/martin-rizzo/TinyBreaker.prototype0"><img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face%3A-TinyBreaker-EEE?labelColor=FFD21E&amp;logo=huggingface&amp;logoColor=000" /></a></p>
 <p><img alt="TinyBreaker" src="images/tinybreaker_grid.jpg" /></p>
-<hr />
-<h2 id="what-is-tinybreaker">What is TinyBreaker?</h2>
-<p><strong>TinyBreaker</strong> is a generative image model that combines the <strong><a href="https://github.com/PixArt-alpha/PixArt-sigma">PixArt model</a></strong> for base image generation with the <strong><a href="https://civitai.com/models/84728/photon">Photon model</a></strong> for image refinement. This hybrid approach leverages the strengths of both models, enabling efficient operation on mid-range and low-end hardware due to their low parameter count. Additionally, by running them sequentially, you can offload models to system RAM, significantly reducing VRAM usage.</p>
-<p>In addition to all that, TinyBreaker also integrates <strong><a href="https://github.com/madebyollin/taesd">Tiny AutoEncoders</a></strong> for latent space conversion, further optimizing performance and efficiency.  </p>
-<p><span style="font-size: 0.8em; color: gray;"><strong>Note</strong>: While Photon is currently embedded in TinyBreaker, any SD1.5 model could be used as a refiner. SDXL models could also be used, but this would increase the parameter count, requiring more GPU resources.</span></p>
+<h1 id="what-is-tinybreaker">What is TinyBreaker?</h1>
+<p><strong>TinyBreaker</strong> is a generative image model that combines the <a href="https://github.com/PixArt-alpha/PixArt-sigma">PixArt model</a> for base image generation with the <a href="https://civitai.com/models/84728/photon">Photon model</a> for image refinement. This hybrid approach leverages the strengths of both models, enabling efficient operation on mid-range and low-end hardware due to their low parameter count. Additionally, by running them sequentially, you can offload models to system RAM, significantly reducing VRAM usage.</p>
+<p>In addition to all that, TinyBreaker also integrates <a href="https://github.com/madebyollin/taesd">Tiny AutoEncoders</a> for latent space conversion, further optimizing performance and efficiency.  </p>
+<p><em><strong>Note</strong>: While Photon is currently embedded in TinyBreaker, any SD1.5 model could be used as a refiner. SDXL models could also be used, but this would increase the parameter count, requiring more GPU resources.</em></p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/martin-rizzo/ComfyUI-TinyBreaker">ComfyUI-TinyBreaker</a>: Nodes and workflows for ComfyUI to experiment with the model.  </li>
+<li><a href="https://github.com/martin-rizzo/TinyBreakerTools">TinyBreakerTools</a>: Scripts I’m developing to assemble the internal models that make up the safetensors file of TinyBreaker.  </li>
+<li><a href="https://github.com/martin-rizzo/AbominableWorkflows">AbominableWorkflows</a>: The predecessor of TinyBreaker. My first experiment combining PixArt-Sigma and Photon.  </li>
+</ul>
 <!--
 
 TinyBreaker represents the natural evolution of two earlier projects:  
@@ -136,13 +137,15 @@ The use of Tiny Autoencoders for latent space conversion further enhances TinyBr
 ## Future Directions  
 The focus is on enhancing speed without compromising image quality. Efforts are underway to make TinyBreaker more accessible, especially for users with mid-range or lower-end hardware. Thank you for your continued support as we strive to improve. Updates will be shared soon.  
 
+---
+
+## Documentation  
+[View full documentation](documentation.md)  
+[Download models](models.md)  
+[Usage guide](usage.md)  
+
+---
 -->
-<hr />
-<h2 id="documentation">Documentation</h2>
-<p><a href="documentation.md">View full documentation</a><br />
-<a href="models.md">Download models</a><br />
-<a href="usage.md">Usage guide</a>  </p>
-<hr />
               
             </div>
           </div><footer>
@@ -195,5 +198,5 @@ The focus is on enhancing speed without compromising image quality. Efforts are 
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-05-01 21:26:17.604087+00:00
+Build Date UTC : 2025-05-01 22:42:34.380875+00:00
 -->
