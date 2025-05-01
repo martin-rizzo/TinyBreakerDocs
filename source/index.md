@@ -7,14 +7,18 @@
 ![TinyBreaker](images/tinybreaker_grid.jpg)
 
 
----
+# What is TinyBreaker?
+**TinyBreaker** is a generative image model that combines the [PixArt model](https://github.com/PixArt-alpha/PixArt-sigma) for base image generation with the [Photon model](https://civitai.com/models/84728/photon) for image refinement. This hybrid approach leverages the strengths of both models, enabling efficient operation on mid-range and low-end hardware due to their low parameter count. Additionally, by running them sequentially, you can offload models to system RAM, significantly reducing VRAM usage.
 
-## What is TinyBreaker?
-**TinyBreaker** is a generative image model that combines the **[PixArt model](https://github.com/PixArt-alpha/PixArt-sigma)** for base image generation with the **[Photon model](https://civitai.com/models/84728/photon)** for image refinement. This hybrid approach leverages the strengths of both models, enabling efficient operation on mid-range and low-end hardware due to their low parameter count. Additionally, by running them sequentially, you can offload models to system RAM, significantly reducing VRAM usage.
+In addition to all that, TinyBreaker also integrates [Tiny AutoEncoders](https://github.com/madebyollin/taesd) for latent space conversion, further optimizing performance and efficiency.  
 
-In addition to all that, TinyBreaker also integrates **[Tiny AutoEncoders](https://github.com/madebyollin/taesd)** for latent space conversion, further optimizing performance and efficiency.  
+_**Note**: While Photon is currently embedded in TinyBreaker, any SD1.5 model could be used as a refiner. SDXL models could also be used, but this would increase the parameter count, requiring more GPU resources._
 
-<span style="font-size: 0.8em; color: gray;">**Note**: While Photon is currently embedded in TinyBreaker, any SD1.5 model could be used as a refiner. SDXL models could also be used, but this would increase the parameter count, requiring more GPU resources.</span>
+
+## Resources
+- [ComfyUI-TinyBreaker](https://github.com/martin-rizzo/ComfyUI-TinyBreaker): Nodes and workflows for ComfyUI to experiment with the model.  
+- [TinyBreakerTools](https://github.com/martin-rizzo/TinyBreakerTools): Scripts I’m developing to assemble the internal models that make up the safetensors file of TinyBreaker.  
+- [AbominableWorkflows](https://github.com/martin-rizzo/AbominableWorkflows): The predecessor of TinyBreaker. My first experiment combining PixArt-Sigma and Photon.  
 
 
 <!--
@@ -60,7 +64,6 @@ The use of Tiny Autoencoders for latent space conversion further enhances TinyBr
 ## Future Directions  
 The focus is on enhancing speed without compromising image quality. Efforts are underway to make TinyBreaker more accessible, especially for users with mid-range or lower-end hardware. Thank you for your continued support as we strive to improve. Updates will be shared soon.  
 
--->
 ---
 
 ## Documentation  
@@ -69,4 +72,5 @@ The focus is on enhancing speed without compromising image quality. Efforts are 
 [Usage guide](usage.md)  
 
 ---
+-->
 
